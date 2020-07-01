@@ -1,0 +1,79 @@
+%visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+%resetMarPad {
+  margin: 0px;
+  padding: 0px;
+}
+
+%sizeContainer {
+  margin: auto;
+  width: 1200px;
+  padding: 94px 15px;
+}
+
+%paddingContainer {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+%title {
+  text-align: center;
+
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: $titleTextColor;
+}
+
+%title-text {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+
+  text-transform: uppercase;
+
+  color: $titleTextColor;
+}
+
+%text {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+
+  color: $textColor;
+}
+
+%btn-text {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+
+  color: #fff;
+  background: $accentColor;
+}

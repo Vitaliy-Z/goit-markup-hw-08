@@ -1,0 +1,44 @@
+.mailing .title-text {
+  display: block;
+  margin-bottom: 20px;
+
+  @extend %title-text;
+  color: #fff;
+}
+
+.mailing .js-speaker-form {
+  @include flex;
+}
+
+.mailing .input {
+  margin-right: 12px;
+
+  width: 358px;
+  height: 50px;
+
+  background-color: $footerBgColor;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.mailing .btn-submit {
+  @include flex;
+
+  width: 200px;
+  padding: 10px 0;
+
+  @extend %btn-text;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.mailing .icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}

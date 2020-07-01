@@ -1,0 +1,49 @@
+.features {
+  @extend %sizeContainer;
+}
+
+.features .title {
+  @extend %visually-hidden;
+}
+
+.features .elements {
+  @extend %resetMarPad;
+  @include flex($content: space-between);
+  list-style-type: none;
+}
+
+.features .item {
+  width: 270px;
+}
+
+.features .icon {
+  text-align: center;
+
+  height: 120px;
+  padding: 25px 0;
+  margin-bottom: 30px;
+
+  color: $titleTextColor;
+
+  border-radius: 4px;
+  background-color: $secondaryBgColor;
+}
+
+.features .icon-item {
+  width: 70px;
+  height: 70px;
+  fill: currentColor;
+}
+
+.features .title-text {
+  @extend %resetMarPad;
+  margin-bottom: 10px;
+
+  @extend %title-text;
+}
+
+.features .text {
+  @extend %resetMarPad;
+
+  @extend %text;
+}

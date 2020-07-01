@@ -1,0 +1,11 @@
+.works .title {
+  @extend %visually-hidden;
+}
+
+.works .elements {
+  @extend %resetMarPad;
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+}

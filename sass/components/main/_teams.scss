@@ -1,0 +1,19 @@
+.teams {
+  background-color: $secondaryBgColor;
+
+  & .container {
+    @extend %sizeContainer;
+  }
+}
+
+.teams .title {
+  @extend %resetMarPad;
+  @extend %title;
+}
+
+.teams .elements {
+  @extend %resetMarPad;
+  list-style-type: none;
+
+  @include flex($content: space-between);
+}

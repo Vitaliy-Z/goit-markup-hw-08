@@ -1,0 +1,16 @@
+@mixin font($family: Roboto, $style: normal, $weight: 500, $size: 14px) {
+  font-family: $family, sans-serif;
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+}
+
+@mixin flex($display: flex, $item: center, $content: center) {
+  display: $display;
+  align-items: $item;
+  justify-content: $content;
+}
+
+@mixin transition($type) {
+  transition: $type 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}

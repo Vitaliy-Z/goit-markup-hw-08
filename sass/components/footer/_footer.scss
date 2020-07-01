@@ -1,0 +1,9 @@
+.footer {
+  background-color: $footerBgColor;
+}
+
+.footer .container {
+  @extend %sizeContainer;
+  padding: 60px 0;
+  @include flex($item: baseline, $content: space-between);
+}

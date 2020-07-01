@@ -1,0 +1,48 @@
+.activity {
+  @extend %sizeContainer;
+
+  padding-top: 0;
+}
+
+.activity .title {
+  @extend %resetMarPad;
+  @extend %title;
+}
+
+.activity .elements {
+  @extend %resetMarPad;
+
+  @include flex($content: space-between);
+
+  list-style-type: none;
+}
+
+.activity .item {
+  position: relative;
+}
+
+.activity .imeg {
+  display: block;
+
+  width: 370px;
+  height: 294px;
+
+  border-radius: 4px;
+}
+
+.activity .title-text {
+  @extend %resetMarPad;
+
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  padding: 27px;
+
+  text-align: center;
+  @extend %title-text;
+
+  color: #fff;
+  background-color: rgba(47, 48, 58, 0.8);
+  border-radius: 0px 0px 4px 4px;
+}

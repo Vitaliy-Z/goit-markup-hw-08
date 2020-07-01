@@ -1,0 +1,13 @@
+.logo {
+  display: inline-block;
+  color: $titleTextColor;
+  text-decoration: none;
+
+  @include font($family: Raleway, $weight: bold, $size: 26px);
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+
+  .accent {
+    color: $accentColor;
+  }
+}
