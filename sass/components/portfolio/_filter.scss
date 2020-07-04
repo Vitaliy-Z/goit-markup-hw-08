@@ -5,12 +5,18 @@
 .filter .elements {
   @extend %resetMarPad;
   list-style: none;
-  @include flex;
+  display: flex;
+  flex-wrap: wrap;
 
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 
-  &:not(:last-child) {
-    margin-right: 8px;
+  @media screen and (min-width: $tablet) {
+    @include flex;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
   }
 }
 
@@ -19,15 +25,19 @@
 
   &:not(:last-child) {
     margin-right: 8px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 0;
+    }
   }
 }
 
 .filter .button {
   padding: 6px 22px;
 
-  @extend %btn-text;
-  line-height: 1.6;
-  letter-spacing: 0.03em;
+  @include font($size: 16px, $height: 1.65);
+
   color: $titleTextColor;
   background-color: $secondaryBgColor;
   border: none;

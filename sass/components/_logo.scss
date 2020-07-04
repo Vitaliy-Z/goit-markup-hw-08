@@ -1,13 +1,13 @@
 .logo {
-  display: inline-block;
+  display: block;
   color: $titleTextColor;
   text-decoration: none;
-
-  @include font($family: Raleway, $weight: bold, $size: 26px);
-  line-height: 1.2;
-  letter-spacing: 0.03em;
 
   .accent {
     color: $accentColor;
   }
+
+  @include font($family: Raleway, $weight: bold, $size: 24px);
+  line-height: 1.2;
+  letter-spacing: 0.03em;
 }

@@ -1,5 +1,13 @@
 .features {
-  @extend %sizeContainer;
+  @include Container($width: $mobile);
+
+  @media screen and (min-width: $tablet) {
+    @include Container($width: $tablet);
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include Container($width: $desktop, $padding: 94px 15px);
+  }
 }
 
 .features .title {
@@ -8,12 +16,30 @@
 
 .features .elements {
   @extend %resetMarPad;
-  @include flex($content: space-between);
   list-style-type: none;
+
+  margin: -15px;
+
+  @media screen and (min-width: $tablet) {
+    @include flex($item: flex-start);
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include flex($content: space-between);
+  }
 }
 
 .features .item {
-  width: 270px;
+  margin: 15px;
+
+  @media screen and (min-width: $tablet) {
+    width: calc(((100% - 4 * 15px)) / 2);
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: calc(((100% - 8 * 15px)) / 4);
+  }
 }
 
 .features .icon {
@@ -39,11 +65,20 @@
   @extend %resetMarPad;
   margin-bottom: 10px;
 
-  @extend %title-text;
+  @include font($weight: bold);
+  text-transform: uppercase;
+  color: $titleTextColor;
+
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    text-align: left;
+  }
 }
 
 .features .text {
   @extend %resetMarPad;
 
-  @extend %text;
+  @include font($height: 1.8);
+  color: $textColor;
 }

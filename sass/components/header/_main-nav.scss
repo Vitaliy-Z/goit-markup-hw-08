@@ -1,32 +1,74 @@
-.main-nav {
-  margin-left: 85px;
-  margin-right: 305px;
+.header .menu-container {
+  display: none;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9;
+
+  padding: 60px 0;
+
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  background-color: #fff;
+
+  border-top: 1px solid #ececec;
+
+  overflow: scroll;
+
+  &.is-open {
+    display: block;
+  }
+
+  @media screen and (min-width: $tablet) {
+    position: static;
+    @include flex();
+    justify-content: space-between;
+    padding: 0;
+    border: none;
+
+    overflow: visible;
+  }
 }
 
 .site-nav {
   @extend %resetMarPad;
   list-style-type: none;
-  @include flex($content: space-between);
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    margin: 0;
+    margin-right: 84px;
+  }
 }
 
 .site-nav .item {
-  position: relative;
-
   &:not(:last-child) {
-    margin-right: 50px;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+      margin-right: 50px;
+    }
   }
 }
 
 .site-nav .link {
-  display: block;
-  padding: 32px 0;
+  position: relative;
 
-  color: $titleTextColor;
-  @include font;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-
+  display: inline-block;
   text-decoration: none;
+
+  padding: 12px 0;
+
+  @include font($size: 18px, $spacing: 0.02em);
+  color: $titleTextColor;
 
   @include transition($type: color);
 
@@ -34,17 +76,25 @@
   &:focus {
     color: $accentColor;
   }
+
+  @media screen and (min-width: $tablet) {
+    @include font($size: 14px);
+    padding: 32px 0;
+  }
 }
 
 .site-nav .current {
   color: $accentColor;
   &::after {
     content: "";
+
+    position: absolute;
+    bottom: 0;
+
     display: block;
     width: 100%;
     height: 4px;
-    position: absolute;
-    bottom: 0;
+
     background: #2196f3;
     border-radius: 2px;
   }

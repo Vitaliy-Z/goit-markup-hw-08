@@ -7,18 +7,28 @@
 .footer .address {
   list-style-type: none;
   @extend %resetMarPad;
+  @include font($weight: normal, $height: 1.5);
+  margin-bottom: 60px;
 
-  @extend %text;
+  @media screen and (min-width: $desktop) {
+    margin: 0;
+    margin-right: 69px;
+  }
 }
 
 .address .item {
   display: block;
 
   &:not(:last-child) {
-    margin-bottom: 9px;
+    margin-bottom: 8px;
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 9px;
+    }
   }
 
   & .text {
+    @extend %resetMarPad;
     color: #fff;
   }
 

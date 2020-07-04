@@ -1,7 +1,67 @@
-.header {
-  @include flex($content: flex-start);
-  @extend %sizeContainer;
-  padding: 0 15px;
+.header .container {
+  @extend %mobileContainer;
+  padding: 10px 15px;
 
   background-color: $primaryBgColor;
+
+  position: relative;
+
+  @include flex($content: space-between);
+
+  max-width: $mobile;
+
+  @media screen and (min-width: $tablet) {
+    padding: 0 15px;
+    max-width: $tablet;
+    @include flex($content: flex-start);
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: $desktop;
+  }
+}
+
+.header .logo {
+  @media screen and (min-width: $tablet) {
+    display: inline-flex;
+    margin-right: 81px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 85px;
+  }
+}
+
+.header .button {
+  @extend %resetMarPad;
+  display: inline-flex;
+  border: none;
+  background-color: transparent;
+
+  & .icon {
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: contain;
+    fill: currentColor;
+
+    &:hover {
+      color: $accentColor;
+    }
+  }
+
+  & .icon-cross {
+    opacity: 0;
+  }
+
+  &.is-open .icon-cross {
+    opacity: 1;
+  }
+  &.is-open .icon-menu {
+    opacity: 0;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
 }

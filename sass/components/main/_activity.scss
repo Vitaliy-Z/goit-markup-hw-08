@@ -1,12 +1,21 @@
 .activity {
-  @extend %sizeContainer;
+  display: none;
 
-  padding-top: 0;
+  @media screen and (min-width: $desktop) {
+    display: block;
+    @include Container($width: $desktop, $padding: 94px 15px);
+    padding-top: 0;
+    text-align: center;
+  }
 }
 
 .activity .title {
   @extend %resetMarPad;
-  @extend %title;
+
+  margin-bottom: 50px;
+
+  @include font($weight: bold, $size: 36px);
+  color: $titleTextColor;
 }
 
 .activity .elements {
@@ -40,9 +49,11 @@
   padding: 27px;
 
   text-align: center;
-  @extend %title-text;
 
-  color: #fff;
+  @include font($weight: bold);
+  text-transform: uppercase;
+  color: #ffffff;
+
   background-color: rgba(47, 48, 58, 0.8);
   border-radius: 0px 0px 4px 4px;
 }

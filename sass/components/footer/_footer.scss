@@ -3,7 +3,25 @@
 }
 
 .footer .container {
-  @extend %sizeContainer;
-  padding: 60px 0;
-  @include flex($item: baseline, $content: space-between);
+  @include Container($width: $mobile);
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    @include Container($width: $tablet);
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include Container($width: $desktop);
+    @include flex($item: baseline, $content: space-between);
+    text-align: left;
+  }
+}
+
+.footer .for-tablet {
+  @media screen and (min-width: $tablet) {
+    @include flex($content: space-around, $item: flex-start);
+  }
+  @media screen and (min-width: $desktop) {
+    @include flex($item: baseline);
+  }
 }

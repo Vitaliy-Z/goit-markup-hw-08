@@ -1,15 +1,33 @@
 .header-contact {
   list-style-type: none;
-  @include flex($item: stech, $content: flex-start);
   @extend %resetMarPad;
+
+  @media screen and (min-width: $tablet) {
+    text-align: left;
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include flex($item: stech, $content: flex-start);
+  }
 }
 
 .header-contact .item {
-  @include flex($content: flex-start);
-  padding: 32px 0;
+  @media screen and (min-width: $desktop) {
+    @include flex($content: flex-start);
+    padding: 32px 0;
+    margin-right: 30px;
+  }
 
   &:not(:last-child) {
-    margin-right: 30px;
+    margin-bottom: 16px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 10px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -17,10 +35,9 @@
   @include flex($display: inline-flex, $content: flex-start, $item: stech);
   text-decoration: none;
 
-  @include font;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
+  @include font($size: 18px, $spacing: 0.02em);
   color: $textColor;
+
   cursor: pointer;
   @include transition($type: color);
 
@@ -28,20 +45,39 @@
   &:focus {
     color: $accentColor;
   }
+
+  @media screen and (min-width: $tablet) {
+    @include font($size: 12px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include font($size: 14px);
+  }
 }
 
 .header-contact {
-  .post {
+  & .post {
     width: 16px;
     height: 15px;
     margin-right: 10px;
     fill: currentColor;
+
+    @media screen and (min-width: $tablet) {
+      width: 14px;
+      height: 10px;
+      margin-right: 8px;
+    }
   }
 
-  .tel {
+  & .tel {
     width: 10px;
     height: 15px;
     margin-right: 10px;
     fill: currentColor;
+
+    @media screen and (min-width: $tablet) {
+      height: 14px;
+      margin-right: 8px;
+    }
   }
 }
