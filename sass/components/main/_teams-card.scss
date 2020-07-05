@@ -18,12 +18,21 @@
   }
 }
 
-.teams .imeg {
-  display: inline-block;
+.teams .imeg-box {
   overflow: hidden;
-
   margin-bottom: 30px;
+  height: 320px;
+
+  @media screen and (min-width: $tablet) {
+    height: 260px;
+  }
+}
+
+.teams .imeg {
+  display: block;
+
   width: 100%;
+  height: auto;
 }
 
 .teams .title-text {
